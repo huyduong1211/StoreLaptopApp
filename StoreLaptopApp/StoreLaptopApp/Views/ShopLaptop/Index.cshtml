@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 3})"><img src="~/Asset/images/Laptopdell.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 3})">Laptop Dell chính hãng</a></h3></div>
+                    <div class="price">17.000.000<span>18.000.000</span></div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 4})"><img src="~/Asset/images/Laptopdell1.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 4})">Laptop Dell chính hãng</a></h3></div>
+                    <div class="price">17.000.000<span>18.000.000</span></div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 5})"><img src="~/Asset/images/laptopdellg3.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 5})">Laptop Dell G3</a></h3></div>
+                    <div class="price">17.000.000<span>19.000.000</span></div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 6})"><img src="~/Asset/images/laptopdellxps13.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 6})">Laptop Dell XPS 13</a></h3></div>
+                    <div class="price">17.000.000<span>18.500.000</span></div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

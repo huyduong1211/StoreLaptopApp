@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.Comment>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<h2>Bình luận</h2>
+
+@using (Html.BeginForm("Create", "Comment", FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.Hidden("masp", (int)ViewBag.Id)
+    @*@Html.TextArea("Content")*@
+    <textarea cols="100" id="Content" name="Content" rows="1"></textarea>
+    <br />
+    <input type="submit" value="Đăng" />
+
+}
+<div id="comments">
+    @foreach (var item in Model)
+    {
+        <div class="comment">
+            <div class="comment-name" style="font-weight: bold">@item.NameAccount</div>
+            <div class="comment-content">@item.Content</div>
+            <div class="comment-content">@item.Day</div>
+        </div>
+    }
+
+
+</div>

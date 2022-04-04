@@ -1,0 +1,15 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.Product>
+@using System.Globalization;
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("Details","Product", new { id = @item.Id })" class="latest-product__item">
+        <div class="latest-product__item__pic">
+            <img src="~/Content/images/@item.Cover" alt="">
+        </div>
+        <div class="latest-product__item__text">
+            <h6>@item.Name</h6>
+            <span>@string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", item.Price)<span>vnđ</span></span>
+        </div>
+    </a>
+}
+

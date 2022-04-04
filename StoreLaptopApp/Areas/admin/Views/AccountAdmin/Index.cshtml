@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.AspNetUser>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+
+
+<table>
+    <tr>
+        <th>Mã người dùng</th>
+        <th>Tên người dùng</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th colspan="2">
+
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.PasswordHash</td>
+            <td>
+                <a href="@Url.Action("Edit","AccountAdmin",new { id= @item.Id})"><img src="~/Content/images/edit.png" /></a>
+            </td>
+            <td>
+                <a href="@Url.Action("Delete","AccountAdmin",new { id= @item.Id})"><img src="~/Content/images/delete.png" /></a>
+            </td>
+        </tr>
+
+    }
+</table>
+
+

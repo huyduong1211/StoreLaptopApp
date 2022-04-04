@@ -1,0 +1,34 @@
+﻿@model StoreLaptopApp.Models.StoreEntities.Product
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>MaSP</td>
+            <td>TenSP</td>
+            <td>AnhSP</td>
+            <td>SoluongSP</td>
+            <td>GiaSP</td>
+            <td>Thanh tien</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@</td>
+                <td>@item.Product.Name</td>
+                <td><img src="@item.Product.Cover" /></td>
+                <td><input type="text" class="quantity" value="@item.Quantity" /></td>
+                <td>@item.Product.Price</td>
+                <td>@(item.Product.Price * item.Quantity)</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

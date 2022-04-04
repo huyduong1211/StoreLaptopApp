@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Areas/Aset/js/product/previewFile.js"></script>
+
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /*div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }*/
+</style>
+
+<div style=" padding: 20px;">
+    @using (Html.BeginForm("Create", "ProductAdmin", FormMethod.Post, new
+    {
+        //enctype = "multipart/form-data"
+
+
+
+    }))
+    {
+        <label for="fname" style="margin-left:-459px">Chon Hinh Chinh</label>
+        <input type="File" id="file_Cover" name="Cover" onchange="previewFile();" style="float:left; margin-left:165px">
+        <div>
+            <img id="target" class="img" src="#" alt="image" style="float:right; width:262px; height:201px" />
+        </div>
+        <br />
+
+        <label for="fname" style="margin-left:-459px">Chon Hinh 1</label>
+        <input type="File" id="file_Cover" name="Cover1" onchange="previewFile();" style="float:left; margin-left:165px">
+        <div>
+            <br  style="float:right; width:262px; height:201px" />
+        </div>
+
+        <label for="fname" style="margin-left:-459px">Chon Hinh 2</label>
+        <input type="File" id="file_Cover" name="Cover2" onchange="previewFile();" style="float:left; margin-left:165px">
+        <div>
+            <br  style="float:right; width:2px; height:201px" />
+        </div>
+
+        <label for="fname" style="margin-left:-459px">Chon Hinh 3</label>
+        <input type="File" id="file_Cover" name="Cover3" onchange="previewFile();" style="float:left; margin-left:165px">
+        <div>
+            <br style="float:right; width:1px; height:201px" />
+        </div>
+
+        <label for="fname" style="margin-left:-459px">Chon Hinh 4</label>
+        <input type="File" id="file_Cover" name="Cover4" onchange="previewFile();" style="float:left; margin-left:165px">
+        <div>
+            <br style="float:right; width:1px; height:201px" />
+        </div>
+
+
+        <label for="fname" style="margin-top:245px">Mã sản phẩm</label>
+        <input type="text" id="fname" name="Id" placeholder="Nhập mã sản phẩm" required>
+
+        <label for="lname">Tên sản phẩm</label>
+        <input type="text" id="lname" name="Name" placeholder="Nhập tên sản phẩm" required>
+
+        <label for="fname">Miêu tả sản phẩm</label>
+        <input type="text" id="fname" name="Description" placeholder="" required>
+
+        <label for="lname">Năm</label>
+        <input type="text" id="lname" name="PublicYear" placeholder="Nhập năm sản phẩm" required>
+
+        <label for="lname">Gía</label>
+        <input type="text" id="lname" name="Price" placeholder="" required>
+
+        <label for="country">Nhập loại sản phẩm</label>
+        <select id="country" name="IdProductType" style="width:89px;height:26px;" required>
+            <option value="5">Cao cấp</option>
+            <option value="6">Trung bình</option>
+            <option value="7">Thấp</option>
+
+        </select>
+        <label for="country">Nhập tên nhà sản xuất</label>
+        <select id="country" name="IdProducer" style="width:89px;height:26px;" required>
+            <option value="1">DELL</option>
+            <option value="2">ASUS</option>
+            <option value="3">ACER</option>
+            <option value="4">MACBOOK</option>
+            <option value="5">Tai nghe</option>
+            <option value="6">Sạc</option>
+            <option value="7">Bàn phím</option>
+
+        </select>
+
+        <label for="country">Top6Product</label>
+        <select id="country" name="Note" style="width:89px;height:26px;" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+
+
+        </select>
+        <label for="country">Top phụ kiện</label>
+        <select id="country" name="Note" style="width:89px;height:26px;" required>
+            <option value="5">Sạc #1</option>
+            <option value="6">Sạc #2</option>
+            <option value="7">Tai nghe #1</option>
+            <option value="8">Tai nghe #2</option>
+            <option value="9">Bàn phím #1</option>
+            <option value="10">Bàn phím #2</option>
+            <option value="0">No</option>
+
+        </select>
+
+        <input type="submit" value="Submit">
+    }
+</div>
+

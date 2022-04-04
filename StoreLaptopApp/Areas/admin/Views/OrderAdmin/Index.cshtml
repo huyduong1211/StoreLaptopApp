@@ -1,0 +1,74 @@
+﻿@model IEnumerable<StoreLaptopApp.Models.StoreEntities.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employees.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Confirmed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delivered)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Customer.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employees.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderDate)
+    </td>
+    <td>
+        @if (item.Confirmed != true)
+        {
+            <a>Chưa xác nhận</a>
+        }
+        else
+        {
+            <a>Đã xác nhận</a>
+        }
+    </td>
+    <td>
+        @if (item.Confirmed != true)
+        {
+            <a>Chờ xác nhận</a>
+        }
+        else if (item.Delivered != true)
+        {
+            <a>Chờ giao hàng</a>
+        }
+        else
+        {
+            <a>Giao thành công</a>
+        }
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.OrderId })
+    </td>
+</tr>
+}
+
+</table>

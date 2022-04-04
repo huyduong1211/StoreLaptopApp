@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HLT | Chuyên mua bán Laptop</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">
+   @*chat*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="~/chat/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/chat/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/chat/css/responsive.css">
+
+    <!-- ChatBot -->
+    <link rel="stylesheet" type="text/css" href="~/chat/css/jquery.convform.css">
+    
+</head>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="~/Content/images/LG1.jpg" alt=""></a>
+        </div>
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                <li><a href="@Url.Action("ShowToCart","ShoppingCart")"><i class="fa fa-shopping-bag"></i>@Html.Action("BagCart", "ShoppingCart")</a></li>
+            </ul>
+            <div class="header__cart__price">item: <span></span></div>
+        </div>
+        <div class="humberger__menu__widget">
+            <div class="header__top__right__language">
+                <img src="~/Content/img/language.png" alt="">
+                <div>Việt Nam</div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">More Country</a></li>
+                    <li><a href="#">Việt Nam</a></li>
+                </ul>
+            </div>
+            <div class="header__top__right__auth">
+                <a href="#"><i class="fa fa-user"></i> Login</a>
+            </div>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./shop-grid.html">Shop</a></li>
+                <li>
+                    <a href="#">Pages</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="./shop-details.html">Shop Details</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        </div>
+        <div class="humberger__menu__contact">
+            <ul>
+                <li><i class="fa fa-envelope"></i>huyd4202@gmail.com</li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Humberger End -->
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                               @Html.Partial("_LoginPartial")
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="~/Content/images/laco.jpg" alt="">
+                                <div>Việt Nam</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">More Country</a></li>
+                                    <li><a href="#">Việt Nam</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__top__right__auth">
+                                @Html.Partial("UserMenu")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="@Url.Action("Index","Home")"><img src="~/Content/images/LG1.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("Index","Home")">Home </a>
+                                
+                            </li>
+
+                            <li>
+                                <a href="#">Phụ Kiện</a>
+                                @Html.Partial("_Phukien", StoreLaptopApp.Models.Bus.PhukienBus.DanhSach())
+                            </li>
+                            <li>
+                                @Html.ActionLink("Sản Phẩm", "Index", "Product")
+                                @Html.Partial("_Producer", StoreLaptopApp.Models.Bus.ProducerBus.DanhSach())
+                            </li>
+
+                            <li>
+                                <a href="#">Loại Sản Phẩm</a>
+                                @Html.Partial("_ProductType", StoreLaptopApp.Models.Bus.ProductTypeBus.DanhSach())
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="@Url.Action("ShowToCart","ShoppingCart")"><i class="fa fa-shopping-bag"></i>@Html.Action("BagCart", "ShoppingCart")</a></li>
+                        </ul>
+                        <div class="header__cart__price"> <span></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+        <div class="chat_icon" style="margin-bottom:15px">
+            <img src="~/Content/images/messenger (1).png" width="50" height="50" />
+
+        </div>
+
+        <div class="chat_box">
+            <div class="my-conv-form-wrapper">
+                <form action="" method="GET" class="hidden">
+
+
+
+                    <div data-conv-fork="category">
+                        <div data-conv-case="WebDevelopment">
+                            <input type="text" name="domainName" data-conv-question="Cửa hàng laptop HLT có thể giúp gì cho bạn">
+                        </div>
+                        <div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
+                            <input type="text" name="companyName" data-conv-question="Hiện tại HLT đã quá tải số lượng người ib vui lòng liên hệ(sđt: 0866545300) để đặt hàng hoặc đến tại cửa hàng để chọn những sản phẩm mới nhất">
+                        </div>
+                    </div>
+
+                    <input type="text" name="name" data-conv-question="Hiện tại HLT đã quá tải số lượng người ib vui lòng liên hệ(sđt: 0866545300) để đặt hàng hoặc đến tại cửa hàng để chọn những sản phẩm mới nhất">
+
+                    <input type="text" data-conv-question="Xin lỗi vì sự cố này @*{name}*@, <br> " data-no-answer="true">
+
+                    <input data-conv-question="Good bye" data-pattern="">
+
+
+                    <select data-conv-question="Truy cập link này để được giúp đỡ: https://www.facebook.com/huy.duong.18062533/">
+                        <option value="Yes">Bye</option>
+                    </select>
+
+                </form>
+            </div>
+        </div>
+        <!-- ChatBot end -->
+
+
+        <script type="text/javascript">
+            portfolioList = document.querySelectorAll('.portfolio-box');
+            portfolioList.forEach(function (portfolioPic) {
+                portfolioPic.addEventListener('click', function () {
+                    bg = this.style.backgroundImage;
+                    document.getElementById('port_pop_pic_bg').classList.add("active")
+                    document.getElementById('port_pop_pic').style.backgroundImage = bg
+                    document.getElementById('port_pop_pic').classList.add("active")
+                });
+            })
+            document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+                document.getElementById('port_pop_pic_bg').classList.remove("active")
+                document.getElementById('port_pop_pic').classList.remove("active")
+            })
+        </script>
+    </header>
+
+    @RenderBody()
+    @{Html.RenderPartial("_Footer"); }
+    <!-- Js Plugins -->
+    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/jquery.nice-select.min.js"></script>
+    <script src="~/Content/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/jquery.slicknav.js"></script>
+    <script src="~/Content/js/mixitup.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    @*chat*@
+    <script type="text/javascript" src="~/chat/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/chat/js/jquery.convform.js"></script>
+    <script type="text/javascript" src="~/chat/js/custom.js"></script>
+
+    @*<script type="text/javascript" src="https://anonyviet.com/resource/hoaroi/hoaroi.js"></script>*@
+    <script type="text/javascript" src="https://itexpress.vn/js/noel_yellow.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

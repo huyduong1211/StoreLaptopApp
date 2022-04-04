@@ -1,0 +1,74 @@
+﻿@model IEnumerable<StoreLaptopApp.Models.StoreEntities.OrderDetail>
+@using System.Globalization;
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    @if (Model != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sum</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    double total = item.Product.Price * item.Quantity;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Product.Name)
+                        </td>
+                        <td>
+                            <img src="@Url.Content(item.Product.Cover)" style="width: 100px; height: 100px;" />
+                        </td>
+                        <td>
+                            @string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", item.Price) VNĐ
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Quantity)
+                        </td>
+                        <td>
+                            Total: @string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", total) VNĐ
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6" style="text-align:right">Sum Total: @string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", @Model.Sum(o => o.TotalPrice)) VNĐ</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        if (ViewBag.Confirm != true)
+        {
+            using (Html.BeginForm("SubmitOrder", "OrderAdmin"))
+            {
+                <input type="hidden" value="@ViewBag.Id" name="ID_Order" />
+                <input type="submit" value="Submit_Order" />
+            }
+        }
+        else if (ViewBag.Confirm == true && ViewBag.Delivery != true)
+        {
+            using (Html.BeginForm("DeliveryOrder", "OrderAdmin"))
+            {
+                <input type="hidden" value="@ViewBag.Id" name="ID_Order" />
+                <input type="submit" value="Delivery_Order" />
+            }
+        }
+    }
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

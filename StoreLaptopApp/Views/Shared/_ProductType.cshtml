@@ -1,0 +1,8 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.ProductType>
+
+<ul class="header__menu__dropdown">
+    @foreach (var item in Model)
+    {
+        <li><a href="@Url.Action("Index","ProductType",new {id= @item.IdProductType})">@item.NameType</a></li>
+    }
+</ul>

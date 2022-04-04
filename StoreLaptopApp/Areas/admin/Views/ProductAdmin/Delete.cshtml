@@ -1,0 +1,88 @@
+﻿@model DoAnChuyenNganhConnection.Product
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /*div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }*/
+</style>
+
+<div style=" padding: 20px;">
+    @using (Html.BeginForm("Delete", "ProductAdmin", FormMethod.Post, new
+    {
+
+    }))
+    {
+
+        <label for="fname">Mã sản phẩm</label>
+        <input type="text" id="fname" name="Id" placeholder="" required value="@Model.Id">
+
+        <label for="lname">Tên sản phẩm</label>
+        <input type="text" id="lname" name="Name" placeholder="" required value="@Model.Name">
+
+        <label for="country">Miêu tả sản phẩm</label>
+        <input type="text" id="lname" name="Description" placeholder="" required value="@Model.Description">
+
+        <label for="country">Năm sản xuất</label>
+        <input type="text" id="lname" name="PublicYear" placeholder="" required value="@Model.PublicYear">
+
+        <label for="country">Gía</label>
+        <input type="text" id="lname" name="Price" placeholder="" required value="@Model.Price">
+
+        <label for="country">Hình</label>
+        <input type="text" id="lname" name="Cover" placeholder="" required value="@Model.Cover">
+
+        <label for="country">Hình1</label>
+        <input type="text" id="lname" name="Cover1" placeholder="" required value="@Model.Cover1">
+
+        <label for="country">Hình2</label>
+        <input type="text" id="lname" name="Cover2" placeholder="" required value="@Model.Cover2">
+
+        <label for="country">Hình3</label>
+        <input type="text" id="lname" name="Cover3" placeholder="" required value="@Model.Cover3">
+
+        <label for="country">Hình4</label>
+        <input type="text" id="lname" name="Cover4" placeholder="" required value="@Model.Cover4">
+
+        <label for="country">Loại sản phẩm</label>
+        <input type="text" id="lname" name="IdProductType" placeholder="" required value="@Model.IdProductType">
+
+        <label for="country">Nhà sản xuất</label>
+        <input type="text" id="lname" name="IdProducer" placeholder="" required value="@Model.IdProducer">
+        <label for="country">Ghi chú</label>
+        <input type="text" id="lname" name="Note" placeholder="" required value="@Model.Note">
+
+
+        <input type="submit" value="Submit">
+    }
+</div>

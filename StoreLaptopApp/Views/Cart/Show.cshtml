@@ -1,0 +1,40 @@
+﻿@model StoreLaptopApp.Models.StoreEntities.Cart
+
+@{
+                /**/
+
+                ViewBag.Title = "Show";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show</h2>
+
+     <table class="table">
+        <thead>
+            <tr>
+                <td>MaSP</td>
+                <td>TenSP</td>
+                <td>AnhSP</td>
+                <td>SoluongSP</td>
+                <td>GiaSP</td>
+                <td>Thanh tien</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Carts)
+            {
+                //double total = Convert.ToDouble(item.product.Price.Value * item.Quantity);
+            <tr>
+                <td>@Html.DisplayFor(model => item.product.Id)</td>
+                <td>@Html.DisplayFor(model => item.product.Name)</td>
+                <td><img src="@Url.Content(item.product.Cover)" /></td>
+
+                <td>@Html.DisplayFor(model => item.product.Price)</td>
+                <td>@Html.DisplayFor(model => item.Quantity)</td>
+                
+            </tr>
+            }
+
+        </tbody>
+    </table>
+

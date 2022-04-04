@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index2</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 1})"><img src="~/Asset/images/laptop1.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="product.html">Laptop Asus chính hãng</a></h3></div>
+                    <div class="price">17.000.000</div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 7})"><img src="~/Asset/images/laptopasusrodtrix.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 7})">Laptop Asus RodTrix</a></h3></div>
+                    <div class="price">25.000.000</div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 9})"><img src="~/Asset/images/laptopasuszenbook13.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 9})">Laptop Asus Zenbook 13</a></h3></div>
+                    <div class="price">18.500.000</div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="product">
+                <div class="image"><a href="@Url.Action("Details","Products", new { id = 8})"><img src="~/Asset/images/laptopasusvivobook.jpg" /></a></div>
+                <div class="buttons">
+                    <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                    <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                </div>
+                <div class="caption">
+                    <div class="name"><h3><a href="@Url.Action("Details","Products", new { id = 8})">Laptop Asus Vivo Book</a></h3></div>
+                    <div class="price">19.000.000</div>
+                    <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

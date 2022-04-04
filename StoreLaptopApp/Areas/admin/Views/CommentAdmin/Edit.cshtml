@@ -1,0 +1,81 @@
+﻿@model DoAnChuyenNganhConnection.Comment
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /*div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+
+        margin: auto;
+    }*/
+</style>
+
+<div style=" padding: 20px;">
+    @using (Html.BeginForm("Edit", "CommentAdmin", FormMethod.Post, new
+    {
+
+    }))
+    {
+
+        <label for="fname">Mã </label>
+        <input type="text" id="fname" name="Id" placeholder="" required value="@Model.Id">
+
+        <label for="fname">Mã người dùng </label>
+        <input type="text" id="fname" name="IdAccount" placeholder="" required value="@Model.IdAccount">
+
+        <label for="fname">Tên người dùng </label>
+        <input type="text" id="fname" name="NameAccount" placeholder="" required value="@Model.NameAccount">
+
+        <label for="lname">Nội dung</label>
+        <input type="text" id="lname" name="Content" placeholder="" required value="@Model.Content">
+
+        <label for="lname">Sản phẩm</label>
+        <input type="text" id="lname" name="ProductId" placeholder="" required value="@Model.ProductId">
+
+        <label for="lname">Ngày giờ</label>
+        <input type="text" id="lname" name="Day" placeholder="" required value="@Model.Day">
+
+
+
+        <label for="country">Tình trạng</label>
+        <select id="country" name="Note" style="width:89px;height:26px;" required value="@Model.Note">
+            <option value="1">Duyet</option>
+            <option value="0">Khong duyet</option>
+
+
+        </select>
+
+        <input type="submit" value="Submit">
+    }
+</div>
+
+

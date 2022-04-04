@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.Comment>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+
+
+<table>
+    <tr>
+        <th>Mã</th>
+        <th>Mã người dùng</th>
+        <th>Tên người dùng</th>
+        <th>Nội dung</th>
+        <th>Thời gian</th>
+        <th>Mã sản phẩm</th>
+        <th>Duyệt</th>
+        <th colspan="2">
+
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.IdAccount</td>
+            <td>@item.NameAccount</td>
+            <td>@item.Content</td>
+            <td>@item.Day</td>
+            <td>@item.ProductId</td>
+            <td>@item.Note</td>
+
+
+
+            <td>
+                <a href="@Url.Action("Edit","CommentAdmin",new { id= @item.Id})"><img src="~/Content/images/done.jpg" /></a>
+
+            </td>
+        </tr>
+
+    }
+</table>
+
+

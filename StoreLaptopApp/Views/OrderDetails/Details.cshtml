@@ -1,0 +1,48 @@
+﻿@model IEnumerable<StoreLaptopApp.Models.StoreEntities.OrderDetail>
+@using System.Globalization;
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetail</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Product.Name)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.Product.Cover)" style="width: 100px; height: 100px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Product.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Quantity)
+                    </td>
+                    <td>
+                        <h5>@string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", item.Price)<span>VNĐ</span></h5>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    <a href="@Url.Action("Index","Orders")">Back to list</a>
+</p>

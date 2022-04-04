@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /*div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }*/
+</style>
+
+<div style="padding: 20px;">
+    @using (Html.BeginForm("Create", "ProducerAdmin", FormMethod.Post, new
+    {
+        
+    }))
+    {
+
+        <label for="fname">Mã nhà sản xuất</label>
+        <input type="text" id="fname" name="IdProducer" placeholder="Nhập mã nhà sản xuất" required>
+
+        <label for="lname">Tên nhà sản xuất</label>
+        <input type="text" id="lname" name="NameProducer" placeholder="Nhập tên nhà sản xuất" required>
+
+        <label for="country">Tình trạng</label>
+        <select id="country" name="Status" style="width:89px;height:26px;" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+
+        </select>
+
+        <input type="submit" value="Submit">
+    }
+</div>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+
+
+<table>
+    <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Miêu tả sản phẩm</th>
+        <th>Năm sản xuất</th>
+        <th>Gía</th>
+        <th>Hình</th>
+        <th>Hình1</th>
+        <th>Hình2</th>
+        <th>Hình3</th>
+        <th>Hình4</th>
+        <th>Loại sản phẩm</th>
+        <th>Nhà sản xuất</th>
+        <th>Ghi chú</th>
+        <th colspan="2">
+            <a href="@Url.Action("Create","ProductAdmin")"><img src="~/Content/images/add.png" /></a>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.PublicYear</td>
+            <td>@item.Price</td>
+            <td><img src="~/Content/images/@item.Cover" style="width:100px; height:70px" /></td>
+            <td><img src="~/Content/images/@item.Cover1" style="width:100px; height:70px" /></td>
+            <td><img src="~/Content/images/@item.Cover2" style="width:100px; height:70px" /></td>
+            <td><img src="~/Content/images/@item.Cover3" style="width:100px; height:70px" /></td>
+            <td><img src="~/Content/images/@item.Cover4" style="width:100px; height:70px" /></td>
+            <td>@item.IdProductType</td>
+            <td>@item.IdProducer</td>
+            <td>@item.Note</td>
+
+            <td>
+                <a href="@Url.Action("Edit","ProductAdmin",new { id= @item.Id})"><img src="~/Content/images/edit.png" /></a>
+            </td>
+            <td>
+                <a href="@Url.Action("Delete","ProductAdmin",new { id= @item.Id})"><img src="~/Content/images/delete.png" /></a>
+            </td>
+        </tr>
+
+    }
+</table>

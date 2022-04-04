@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DoAnChuyenNganhConnection.ProductType>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LOAISANPHAM</h2>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+
+
+<table>
+    <tr>
+        <th>Mã loại sản phẩm</th>
+        <th>Tên loại sản phẩm</th>
+        <th>Tình Trạng</th>
+        <th colspan="2">
+            <a href="@Url.Action("Create","ProductTypeAdmin")"><img src="~/Content/images/add.png" /></a>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.IdProductType</td>
+            <td>@item.NameType</td>
+            <td>@item.Status</td>
+            <td>
+                <a href="@Url.Action("Edit","ProductTypeAdmin",new { id= @item.IdProductType})"><img src="~/Content/images/edit.png" /></a>
+            </td>
+            <td>
+                <a href="@Url.Action("Delete","ProductTypeAdmin",new { id= @item.IdProductType})"><img src="~/Content/images/delete.png" /></a>
+            </td>
+        </tr>
+
+    }
+</table>
+
+
